@@ -49,11 +49,15 @@ export function DateForm() {
 
     if (years === 0 && months === 0 && days === 0) {
       setBornToday(true);
+      setShowAge(false);
+      setMoreDOB(false);
       return;
     }
 
     if (years < 0 || months < 0 || days < 0) {
       setMoreDOB(true);
+      setShowAge(false);
+      setBornToday(false);
       return;
     }
 
@@ -64,7 +68,10 @@ export function DateForm() {
     });
 
     setShowAge(true);
+    setBornToday(false);
+    setMoreDOB(false);
   };
+
 
 
   return (
@@ -91,14 +98,30 @@ export function DateForm() {
         </CardContent>
       </Card>
 
-      {showAge ? (
-        <p className="text-lg">Your age is <span className="text-sky-400 font-bold">{age.years}</span> Years, <span className="text-sky-400 font-bold">{age.months}</span> Months, <span className="text-sky-400 font-bold">{age.days}</span> Days.</p>
-      ) : moreDOB ? (
-        <p className="text-lg text-red-300">So were you born in the future ?</p>
+      {moreDOB ? (
+        <>
+          <p className="text-lg text-red-300">So were you born in the future ?</p>
+        </>
       ) : bornToday ? (
         <p className="text-lg text-green-300">Wow you have taken birth today!!</p>
+      ) : showAge ? (
+        <p className="text-lg">
+          Your age is {' '} 
+          {age.years > 0 && (
+            <span>
+              <span className="text-sky-400 font-bold">{age.years}</span> Years,
+            </span>
+          )}
+          {age.months > 0 && (
+            <span>
+              {' '}
+              <span className="text-sky-400 font-bold">{age.months}</span> Months, {" "}
+            </span>
+          )}
+          <span className="text-sky-400 font-bold">{age.days}</span> Days.
+        </p>
       ) : null
-    }
+      }
     </>
   )
 }
