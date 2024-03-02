@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/hooks/useTheme";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Playfair_Display({ subsets: ["latin"],
+weight: ['400', '500', '600', '700', '800', '900'],
+style: ["normal", "italic"],
+});
 
 export const metadata: Metadata = {
   title: "Age Me",
@@ -15,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
-        {children}
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" className="dark">
+        <body className={inter.className}>
+          {children}
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

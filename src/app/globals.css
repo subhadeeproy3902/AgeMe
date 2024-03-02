@@ -5,48 +5,48 @@
 
 @layer base {
   :root {
-    --background: 220 60% 99%;
-    --foreground: 195 7% 11%;
-    --card: 220 60% 99%;
-    --card-foreground: 195 7% 11%;
-    --popover: 220 60% 99%;
-    --popover-foreground: 195 7% 11%;
-    --primary: 192 100% 25%;
+    --background: 240 100% 99%;
+    --foreground: 204 9% 11%;
+    --card: 240 100% 99%;
+    --card-foreground: 204 9% 11%;
+    --popover: 240 100% 99%;
+    --popover-foreground: 204 9% 11%;
+    --primary: 197 100% 28%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 197 17% 36%;
+    --secondary: 205 16% 37%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 200 21% 89%;
-    --muted-foreground: 200 5% 46%;
-    --accent: 200 21% 89%;
-    --accent-foreground: 200 9% 27%;
+    --muted: 212 24% 89%;
+    --muted-foreground: 208 5% 47%;
+    --accent: 212 24% 89%;
+    --accent-foreground: 205 8% 28%;
     --destructive: 0 75% 42%;
     --destructive-foreground: 0 0% 100%;
-    --border: 200 11% 78%;
-    --input: 200 11% 78%;
-    --ring: 192 100% 25%;
+    --border: 212 12% 78%;
+    --input: 212 12% 78%;
+    --ring: 197 100% 28%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 195 7% 11%;
-    --foreground: 200 5% 89%;
-    --card: 195 7% 11%;
-    --card-foreground: 200 5% 89%;
-    --popover: 195 7% 11%;
-    --popover-foreground: 200 5% 89%;
-    --primary: 196 98% 68%;
-    --primary-foreground: 193 100% 13%;
-    --secondary: 199 29% 77%;
-    --secondary-foreground: 198 33% 18%;
-    --muted: 200 9% 27%;
-    --muted-foreground: 200 5% 56%;
-    --accent: 200 9% 27%;
-    --accent-foreground: 200 11% 78%;
+    --background: 204 9% 11%;
+    --foreground: 240 5% 89%;
+    --card: 204 9% 11%;
+    --card-foreground: 240 5% 89%;
+    --popover: 204 9% 11%;
+    --popover-foreground: 240 5% 89%;
+    --primary: 203 100% 75%;
+    --primary-foreground: 198 100% 15%;
+    --secondary: 206 30% 78%;
+    --secondary-foreground: 205 31% 19%;
+    --muted: 205 8% 28%;
+    --muted-foreground: 212 6% 57%;
+    --accent: 205 8% 28%;
+    --accent-foreground: 212 12% 78%;
     --destructive: 6 100% 84%;
     --destructive-foreground: 357 100% 21%;
-    --border: 200 9% 27%;
-    --input: 200 9% 27%;
-    --ring: 196 98% 68%;
+    --border: 205 8% 28%;
+    --input: 205 8% 28%;
+    --ring: 203 100% 75%;
     --radius: 0.5rem;
   }
 }
@@ -59,4 +59,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.date-input-container input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
